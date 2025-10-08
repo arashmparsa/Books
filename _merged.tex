@@ -1,0 +1,454 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{colortbl}
+
+% Custom colors
+\definecolor{sectioncolor}{RGB}{0,51,102}
+\definecolor{subsectioncolor}{RGB}{0,102,153}
+\definecolor{linkcolor}{RGB}{0,102,204}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=linkcolor
+}
+
+% Section formatting
+\titleformat{\section}
+  {\Large\bfseries\color{sectioncolor}}
+  {\thesection}{1em}{}[\titlerule]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{subsectioncolor}}
+  {\thesubsection}{1em}{}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Library Reading List}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{librarymindset@gmail.com}
+
+% Reading status colors
+\definecolor{finishedcolor}{RGB}{46,125,50}      % Green
+\definecolor{inprogresscolor}{RGB}{255,152,0}    % Orange
+\definecolor{toreadcolor}{RGB}{66,165,245}       % Blue
+\definecolor{finishedbg}{RGB}{232,245,233}       % Light green bg
+\definecolor{inprogressbg}{RGB}{255,243,224}     % Light orange bg
+\definecolor{toreadbg}{RGB}{227,242,253}         % Light blue bg
+
+% Custom command for book entry with status
+\newcommand{\bookentry}[5][none]{%
+  \item 
+  \ifx&#1&%
+    % No status
+    \textbf{#2} \\
+  \else
+    \if#1f%
+      % Finished
+      \colorbox{finishedbg}{\textcolor{finishedcolor}{\textbf{✓ FINISHED}}} \textbf{#2} \\
+    \fi
+    \if#1p%
+      % In Progress
+      \colorbox{inprogressbg}{\textcolor{inprogresscolor}{\textbf{⟳ IN PROGRESS}}} \textbf{#2} \\
+    \fi
+    \if#1t%
+      % To Read
+      \colorbox{toreadbg}{\textcolor{toreadcolor}{\textbf{○ TO READ}}} \textbf{#2} \\
+    \fi
+  \fi
+  \textit{Author:} #3 \\
+  \textit{Year:} #4 \\
+  #5
+}
+
+\title{\Huge\textbf{Comprehensive Reading List} \\ \Large Personal Library Collection}
+\author{YouTube: @aparsa-mit \\ Facebook Page ID: 101056041653342}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\begin{abstract}
+\noindent This document captures curated book recommendations across multiple disciplines including energy systems, data science, biology, psychology, politics, and philosophy. The collection emphasizes idiosyncratic books with nuance to improve recall. Based on research showing that spacing, interleaving, and productive failure improve learning and hippocampal efficiency.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%=============================================================================
+\section{Reading Status Overview}
+
+\subsection{Status Legend}
+\begin{itemize}[leftmargin=2cm]
+  \item \colorbox{finishedbg}{\textcolor{finishedcolor}{\textbf{✓ FINISHED}}} -- Books completed
+  \item \colorbox{inprogressbg}{\textcolor{inprogresscolor}{\textbf{⟳ IN PROGRESS}}} -- Currently reading
+  \item \colorbox{toreadbg}{\textcolor{toreadcolor}{\textbf{○ TO READ}}} -- Queued for future reading
+  \item \textbf{No Status} -- Not yet categorized
+\end{itemize}
+
+\subsection{How to Update Status}
+
+To mark a book's status, use one of these codes in the first parameter:
+\begin{itemize}
+  \item Use [f] for Finished books
+  \item Use [p] for In Progress books
+  \item Use [t] for To Read books
+  \item Leave empty or use [none] for no status
+\end{itemize}
+
+\subsection{Featured Books from Images}
+\begin{itemize}
+  \item \colorbox{finishedbg}{\textcolor{finishedcolor}{\textbf{✓}}} The Big Questions of Life -- OM Swami
+  \item \colorbox{inprogressbg}{\textcolor{inprogresscolor}{\textbf{⟳}}} The Idiot -- Fyodor Dostoevsky
+  \item \colorbox{toreadbg}{\textcolor{toreadcolor}{\textbf{○}}} The Code Breaker -- Jennifer Doudna
+  \item \colorbox{finishedbg}{\textcolor{finishedcolor}{\textbf{✓}}} Why We Sleep: Unlocking the Power of Sleep and Dreams
+  \item \colorbox{toreadbg}{\textcolor{toreadcolor}{\textbf{○}}} The Revolt of the Public and the Crisis of Authority in the New Millennium
+  \item \colorbox{toreadbg}{\textcolor{toreadcolor}{\textbf{○}}} Whole Earth Discipline: Why Dense Cities, Nuclear Power, Transgenic Crops, Restored Wildlands, and Geoengineering Are Necessary
+\end{itemize}
+
+%=============================================================================
+\section{Energy, World Future \& Sustainability}
+
+\bookentry[f]{How the World Really Works: The Science Behind How We Got Here and Where We're Going}{Vaclav Smil}{2022}{UCB DOI: Q175.5 .S578 2022, Morrison Library}
+
+\bookentry[t]{Energy Myths and Realities: Bringing Science to the Energy Policy Debate}{Vaclav Smil}{2010}{UCB DOI: TJ808 .S639 2010, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[p]{Energy: A Beginner's Guide}{Vaclav Smil}{2017}{UCB DOI: QC73 .S55 2006, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[t]{Sustainable Materials with Both Eyes Open}{Julian M. Allwood, Jonathan M. Cullen, Mark A. Carruth; University of Cambridge Engineering Department}{2012}{UCB DOI: TJ808 .A449 2012, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[t]{Energy Transitions: Global and National Perspectives}{Vaclav Smil}{2017}{UCB DOI: TJ808 .S64 2017, Bioscience, Natural Resources \& Public Health Library}
+
+\bookentry[t]{Global Catastrophes and Trends: The Next 50 Years}{Vaclav Smil}{2008}{UCB DOI: GB5014 .S58 2008, Earth Sciences \& Map Library}
+
+%=============================================================================
+\section{Neuroscience, Consciousness \& Cognition}
+
+\bookentry{Descartes' Error: Emotion, Reason, and the Human Brain}{Antonio R. Damasio}{2005}{UCB DOI: QP401 .D2 2005, Graduate Services}
+
+\bookentry{Birds and Frogs: Selected Papers, 1990-2014}{Freeman J. Dyson}{2015}{UCB DOI: QC173.7 .D973 2015, Physics-Astronomy Library}
+
+\bookentry{The Feynman Lectures on Physics}{Richard P. Feynman, Robert B. Leighton (editor), Matthew L. Sands (editor)}{2011}{UCB DOI: QC23 .F47 2011, Main (Gardner) Stacks, Doe Library}
+
+%=============================================================================
+\section{Data Science, Machine Learning \& AI}
+
+\bookentry[f]{Deep Learning}{Ian Goodfellow, Yoshua Bengio, Aaron Courville}{2016}{UCB DOI: Q325.5 .G66 2016, Mathematics Statistics Library}
+
+\bookentry[f]{Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy}{Cathy O'Neil}{2016}{UCB DOI: QA76.9.B45 O64 2016, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[p]{The Battle for Your Brain: Defending the Right to Think Freely in the Age of Neurotechnology}{Nita A. Farahany}{2023}{UCB DOI: N/A}
+
+\bookentry[p]{Understanding Deep Learning}{Simon J. D. Prince}{2023}{UCB DOI: N/A}
+
+\bookentry[t]{Computer Vision: Models, Learning, and Inference}{Simon J. D. Prince}{2012}{UCB DOI: TA1634 .P75 2012, Engineering Library}
+
+\bookentry[t]{The Art of Computer Programming}{Donald Ervin Knuth}{2015}{UCB DOI: QA76.6 .K64 2005, Engineering Library}
+
+\bookentry[t]{Theology of Digital Physics, The Cybernetic Singularity, NOOGENESIS: Computational Biology, The Origins of Us: Evolutionary Emergence and the Omega Point Cosmology}{Alex Vikoulov}{N/A}{UCB DOI: N/A}
+
+\bookentry{An Introduction to Kolmogorov Complexity and Its Applications}{Ming Li, P. M. B. Vitányi}{2008}{UCB DOI: QA267.7 .L5 2008, Engineering Library}
+
+%=============================================================================
+\section{Biology, Genetics \& Psychobiology}
+
+\bookentry[t]{When Men Behave Badly: The Hidden Roots of Sexual Deception, Harassment, and Assault}{David M. Buss}{2021}{UCB DOI: HQ28 .B87 2021, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[f]{Dopamine Nation: Finding Balance in the Age of Indulgence}{Anna Lembke}{2021}{UCB DOI: BF515 .L46 2021, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[f]{The Wisdom Paradox: How Your Mind Can Grow Stronger As Your Brain Grows Older}{Elkhonon Goldberg}{2006}{UCB DOI: QP356.25 .G64 2005, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[p]{Who We Are and How We Got Here: Ancient DNA and the New Science of the Human Past}{David Reich (Harvard Medical School)}{2018}{UCB DOI: QH431 .R37 2018, Bioscience, Natural Resources \& Public Health Library}
+
+\bookentry[f]{A Crack in Creation: Gene Editing and the Unthinkable Power to Control Evolution}{Jennifer A. Doudna, Samuel H. Sternberg}{2017}{UCB DOI: QH440 .D68 2017, Bioscience, Natural Resources \& Public Health Library}
+
+\bookentry[t]{The Psychobiology of Gene Expression: Neuroscience and Neurogenesis in Hypnosis and the Healing Arts}{Ernest Lawrence Rossi}{2002}{UCB DOI: QP356.22 .R675 2002, Bioscience, Natural Resources \& Public Health Library}
+
+\bookentry[t]{Happy Accidents: Serendipity in Modern Medical Breakthroughs}{Morton A. Meyers}{2007}{UCB DOI: R149 .M49 2007, Northern Regional Library Facility}
+
+%=============================================================================
+\section{Psychology, Behavior \& Human Nature}
+
+\bookentry[f]{The Righteous Mind: Why Good People Are Divided by Politics and Religion}{Jonathan Haidt}{2012}{UCB DOI: N/A}
+
+\bookentry[t]{Duped: Truth-Default Theory and the Social Science of Lying and Deception}{Timothy R. Levine}{2020}{UCB DOI: N/A}
+
+\bookentry[t]{How Nature Works: The Science of Self-Organized Criticality}{Per Bak}{1996}{UCB DOI: N/A}
+
+\bookentry[p]{The Nature of the Beast: How Emotions Guide Us}{David J. Anderson}{2022}{UCB DOI: N/A (Methods in Enzymology)}
+
+\bookentry[f]{The Neuroscience of Emotion: A New Synthesis}{Ralph Adolphs, David J. Anderson}{2018}{UCB DOI: N/A}
+
+\bookentry[f]{Only the Paranoid Survive: How to Exploit the Crisis Points That Challenge Every Company and Career}{Andrew S. Grove}{1996}{UCB DOI: HD58.8 .G765 1996, Northern Regional Library Facility}
+
+\bookentry[p]{Altered Traits: Science Reveals How Meditation Changes Your Mind, Brain, and Body}{Daniel Goleman, Richard J. Davidson}{2017}{UCB DOI: BL627 .G644 2017, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[f]{Cultural Amnesia: Notes in the Margin of My Time}{Clive James}{2007}{UCB DOI: CB245 .J339 2007, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[f]{The Lucifer Effect: Understanding How Good People Turn Evil}{Philip G. Zimbardo}{2007}{UCB DOI: BF789.E94 Z56 2007, Main (Gardner) Stacks, Doe Library}
+
+\bookentry[t]{Libido Dominandi: Sexual Liberation and Political Control}{E. Michael Jones}{2000}{UCB DOI: HQ472.U6 J65 2000, Main (Gardner) Stacks, Doe Library}
+
+%=============================================================================
+\section{Memory \& Learning}
+
+\bookentry[p]{Why We Remember: Unlocking Memory's Power to Hold on to What Matters}{Charan Ranganath, PhD}{2024}{Morrison Non Fiction: BF371 .R287 2024}
+
+%=============================================================================
+\section{Economics, Politics \& Social Systems}
+
+\subsection{Economic Theory \& Capitalism}
+
+\bookentry{Latin America, Reform or Revolution? (Book Review)}{James Petras and Maurice Zeitlin (editors)}{1969}{American Sociological Review, Vol.34 (6), p.757}
+
+\bookentry{Imperialism, Crisis and Class Struggle: The Enduring Verities and Contemporary Face of Capitalism}{Henry Veltmeyer (editor)}{2010}{N/A}
+
+\bookentry{The Misbehavior of Markets: A Fractal View of Financial Turbulence}{Benoit Mandelbrot, Richard L. Hudson}{2004}{UCB DOI: HG4523 .M257 2004, Main (Gardner) Stacks, Doe Library \\ \textit{Note: Also see Gaussian Self-Affinity and Fractals, Fractals: Form, Chance and Dimension, or The Fractal Geometry of Nature}}
+
+\bookentry{Take the Rich Off Welfare}{Mark Zepezauer}{2004}{UCB DOI: HJ7537 .Z46 2004, Main (Gardner) Stacks, Doe Library}
+
+\bookentry{23 Things They Don't Tell You About Capitalism}{Ha-Joon Chang}{2010}{UCB DOI: HB501 .C523 2010, Main (Gardner) Stacks, Doe Library}
+
+\bookentry{Kicking Away the Ladder: Development Strategy in Historical Perspective}{Ha-Joon Chang}{2002}{UCB DOI: HC60 .C42 2002, Main (Gardner) Stacks, Doe Library}
+
+\subsection{Banking \& Finance}
+
+\bookentry{The Banking Swindle: Money Creation and the State}{Kerry Bolton}{2019}{ISBN: 9781912759750, 1912759756}
+
+\bookentry{A History of Central Banking and the Enslavement of Mankind}{Stephen Mitford Goodson}{2019}{UCB DOI: N/A \\ \textit{Note: Related to central bank digital currency, liberal world order, IMF}}
+
+\bookentry{Barren Metal: A History of Capitalism as the Conflict Between Labor and Usury}{E. Michael Jones}{2014}{UCB DOI: N/A}
+
+\subsection{Political Theory \& Social Control}
+
+\bookentry{The Psychotic Left: From Jacobin France to the Occupy Movement}{Kerry Bolton}{2019}{N/A}
+
+\bookentry{The Decline And Fall of Civilizations}{Kerry Bolton}{2019}{N/A}
+
+\bookentry{Opposing the Money Lenders: The Struggle to Abolish Interest Slavery}{E. Michael Jones}{2019}{ISBN: 9781912759651}
+
+\bookentry{The Jewish Revolutionary Spirit: And Its Impact on World History}{E. Michael Jones}{2008}{UCB DOI: N/A}
+
+\bookentry{Propaganda}{Edward Bernays}{N/A}{UCB DOI: N/A}
+
+\bookentry{Logos Rising: A History of Ultimate Reality}{E. Michael Jones}{N/A}{UCB DOI: N/A}
+
+\bookentry{The Slaughter of Cities: Urban Renewal as Ethnic Cleansing}{E. Michael Jones}{2004}{Environmental Design Library: HT175 .J65 2004}
+
+%=============================================================================
+\section{Intelligence, Geopolitics \& Conflict}
+
+\bookentry{Spies, Lies, and Algorithms: The History and Future of American Intelligence}{Amy B. Zegart}{2022}{UCB DOI: N/A}
+
+\bookentry{The Israel Lobby and U.S. Foreign Policy}{John J. Mearsheimer, Stephen M. Walt}{2007}{UCB DOI: E183.8.I7 M428 2007, Main (Gardner) Stacks, Doe Library}
+
+\bookentry{By Way of Deception: The Making of a Mossad Officer}{Victor Ostrovsky}{1990}{UCB DOI: UB251.I78 O76 1990, Main (Gardner) Stacks, Doe Library}
+
+\bookentry{Charlie Wilson's War: The Extraordinary Story of the Largest Covert Operation in History}{George Crile}{2003}{UCB DOI: DS371.2 .C75 2003, Main (Gardner) Stacks, Doe Library}
+
+\bookentry{Gideon's Spies: The Secret History of the Mossad}{Gordon Thomas}{2005}{UCB DOI: UB251.I78 T49 2005, Main (Gardner) Stacks, Doe Library}
+
+\bookentry{The Other Side of Deception: A Rogue Agent Exposes the Mossad's Secret Agenda}{Victor Ostrovsky}{1994}{UCB DOI: UB271.I82 O846 1994, Main (Gardner) Stacks, Doe Library}
+
+\bookentry{The Secret Relationship Between Blacks and Jews}{Nation of Islam (Chicago, Ill.) Historical Research Department}{N/A}{UCB DOI: E185 .S44 1991, Main (Gardner) Stacks, Doe Library}
+
+\bookentry{The Life of an American Jew in Racist Marxist Israel}{Jack Bernstein, Len Martin}{1984}{UCB DOI: N/A}
+
+%=============================================================================
+\section{Sam Vaknin Collection}
+
+\begin{itemize}
+  \item \textbf{Wars and Empire} (2008)
+  \item \textbf{Financial Crime and Corruption} (2007)
+  \item \textbf{Narcissistic and Psychopathic Leaders} (2009)
+\end{itemize}
+
+%=============================================================================
+\section{Additional Resources \& Links}
+
+\subsection{Online Bookstores \& Resources}
+\begin{itemize}
+  \item Kerry Bolton Books: \url{https://bookshop.org/contributors/kerry-bolton}
+  \item Geopolitics of the Indo-Pacific: \url{https://bookshop.org/p/books/geopolitics-of-the-indo-pacific-kerry-bolton/8417989}
+  \item Solving 9/11: \url{https://www.barnesandnoble.com/w/solving-9-11-christopher-lee-bollyn/1112949954}
+  \item Secret Relationship Books: \url{https://www.alkebulanimages.com/shop/books/secret-relationship-between-blacks-and-jews-hardcover/9780963687708/}
+\end{itemize}
+
+\subsection{Deep Learning Resources}
+\begin{itemize}
+  \item Understanding Deep Learning (Free): \url{https://udlbook.github.io/udlbook/}
+\end{itemize}
+
+%=============================================================================
+\section{Reading Methodology Notes}
+
+\subsection{Key Learning Principles}
+\begin{itemize}
+  \item \textbf{Idiosyncratic books with nuance improve recall}
+  \item \textbf{Spacing}: Distribute learning over time
+  \item \textbf{Interleaving}: Mix different topics during study
+  \item \textbf{Productive failure}: Attempt problems before instruction to improve hippocampal efficiency
+  \item \textbf{Punitive failure}: Avoid punishment-based learning
+\end{itemize}
+
+\subsection{Book Selection Criteria}
+This collection tracks:
+\begin{itemize}
+  \item Banned books for intellectual diversity
+  \item Featured books on scientific podcasts with state-of-the-art research
+  \item Reddit page trends
+  \item Facebook library page trends
+\end{itemize}
+
+%=============================================================================
+\section{To Be Integrated: Books from YouTube Channels}
+
+\textit{Space reserved for books extracted from YouTube channel analysis:}
+
+\subsection{Huberman Lab Podcast}
+\textit{[To be populated from YouTube extraction script]}
+
+\subsection{Other Channels}
+\textit{[To be populated from batch channel analysis]}
+
+% Placeholder for YouTube-extracted books
+% Use the following format when adding:
+% \bookentry{Title}{Author}{Year}{Source: @channel-name, Video: "Video Title"}
+
+%=============================================================================
+\appendix
+
+\section{Library Resources}
+
+\subsection{University of California Berkeley Libraries}
+\begin{itemize}
+  \item Main (Gardner) Stacks, Doe Library
+  \item Morrison Library
+  \item Bioscience, Natural Resources \& Public Health Library
+  \item Physics-Astronomy Library
+  \item Engineering Library
+  \item Mathematics Statistics Library
+  \item Earth Sciences \& Map Library
+  \item Northern Regional Library Facility
+  \item Environmental Design Library
+  \item Graduate Services
+\end{itemize}
+
+%=============================================================================
+\section{Contact \& Updates}
+
+\begin{itemize}
+  \item \textbf{Email}: librarymindset@gmail.com
+  \item \textbf{Facebook Page ID}: 101056041653342
+  \item \textbf{YouTube}: @aparsa-mit
+\end{itemize}
+
+\vspace{1cm}
+
+\noindent\textit{This document is continuously updated with new book discoveries from various sources including academic podcasts, banned book lists, and curated reading recommendations.}
+
+\vspace{0.5cm}
+
+\noindent\textit{Last updated: \today}
+
+\end{document}
+
+
+
+\subsection{Books from Huberman Lab Podcast}
+
+\begin{itemize}
+
+\bookentry[t]{Altered Traits: Science Reveals How Meditation Changes Your Mind, Brain, and Body}{Daniel Goleman, Richard J. Davidson}{2017}
+
+\bookentry[t]{An Introduction to Behavioral Endocrinology}{Randy J. Nelson}{2021}
+
+\bookentry[t]{Atomic Habits: An Easy \& Proven Way to Build Good Habits \& Break Bad Ones}{James Clear}{2018}
+
+\bookentry[t]{Attached: The New Science of Adult Attachment and How It Can Help You Find and Keep Love}{Amir Levine, Rachel Heller}{2010}
+
+\bookentry[f]{Behave: The Biology of Humans At Our Best \& Worst}{Robert Sapolsky}{2017}
+
+\bookentry[t]{Beyond Winning: Negotiating to Create Value in Deals and Disputes}{Robert Mnookin}{2000}
+
+\bookentry[t]{Bridge at Dong Ha}{John Miller}{1989}
+
+\bookentry[t]{Chatter: The Voice in Our Head, Why It Matters, and How to Harness It}{Ethan Kross}{2021}
+
+\bookentry[f]{Deep Work: Rules for Focused Success in a Distracted World}{Cal Newport}{2016}
+
+\bookentry[f]{Digital Minimalism: Choosing a Focused Life in a Noisy World}{Cal Newport}{2019}
+
+\bookentry[f]{Dopamine Nation: Finding Balance in the Age of Indulgence}{Anna Lembke}{2021}
+
+\bookentry[t]{Get It Done: Surprising Lessons from the Science of Motivation}{Ayelet Fishbach}{2022}
+
+\bookentry[t]{Hero with a Thousand Faces}{Joseph Campbell}{1949}
+
+\bookentry[t]{I Contain Multitudes: The Microbes Within Us and a Grander View of Life}{Ed Yong}{2016}
+
+\bookentry[t]{Man Without a Gun: One Diplomat's Secret Struggle to Free the Hostages, Fight Terrorism, and End a War}{Glyn Davies}{2024}
+
+\bookentry[t]{Men, Machines, and Modern Times}{Elting E. Morison}{1966}
+
+\bookentry[t]{Not by Genes Alone: How Culture Transformed Human Evolution}{Peter J. Richerson, Robert Boyd}{2005}
+
+\bookentry[t]{On The Psychology of Military Incompetence}{Norman F. Dixon}{1976}
+
+\bookentry[t]{Opening Up by Writing It Down: How Expressive Writing Improves Health and Eases Emotional Pain}{James W. Pennebaker}{2016}
+
+\bookentry[t]{Outlive: The Science \& Art of Longevity}{Peter Attia}{2023}
+
+\bookentry[t]{PIHKAL: A Chemical Love Story}{Alexander Shulgin, Ann Shulgin}{1991}
+
+\bookentry[t]{Slow Productivity: The Lost Art of Accomplishment Without Burnout}{Cal Newport}{2024}
+
+\bookentry[t]{Spark: The Revolutionary New Science of Exercise and the Brain}{John J. Ratey}{2008}
+
+\bookentry[t]{The 4-Hour Chef: The Simple Path to Cooking Like a Pro, Learning Anything and Living the Good Life}{Tim Ferriss}{2012}
+
+\bookentry[f]{The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma}{Bessel van der Kolk}{2014}
+
+\bookentry[t]{The Creative Act: A Way of Being}{Rick Rubin}{2023}
+
+\bookentry[t]{The Full Fee Agent: How to Stack the Odds in Your Favor as a Real Estate Professional}{Chris Voss}{2020}
+
+\bookentry[t]{The Good Gut: Taking Control of Your Weight, Your Mood, and Your Long-Term Health}{Justin Sonnenburg, Erica Sonnenburg}{2015}
+
+\bookentry[t]{The Revolt of The Public and the Crisis of Authority in the New Millenium}{Martin Gurri}{2014}
+
+\bookentry[t]{The Salt Fix: Why the Experts Got It All Wrong--and How Eating More Might Save Your Life}{James DiNicolantonio}{2017}
+
+\bookentry[t]{The Telomere Effect: A Revolutionary Approach to Living Younger, Healthier, Longer}{Elizabeth Blackburn, Elissa Epel}{2017}
+
+\bookentry[t]{The Upward Spiral: Using Neuroscience to Reverse the Course of Depression, One Small Change at a Time}{Alex Korb}{2015}
+
+\bookentry[t]{Tiny Habits: The Small Changes That Change Everything}{BJ Fogg}{2019}
+
+\bookentry[t]{Trauma: The Invisible Epidemic: How Trauma Works and How We Can Heal From It}{Paul Conti}{2021}
+
+\bookentry[t]{Waking Up: A Guide to Spirituality Without Religion}{Sam Harris}{2014}
+
+\bookentry[t]{When Reason Goes on Holiday: Philosophers in Politics}{Neven Sesardic}{2016}
+
+\bookentry[t]{Wherever You Go, There You Are: Mindfulness Meditation in Everyday Life}{Jon Kabat-Zinn}{1994}
+
+\bookentry[t]{Whole Earth Discipline: Why Dense Cities, Nuclear Power, Transgenic Crops, Restored Wildlands, and Geoengineering Are Necessary}{Stewart Brand}{2009}
+
+\bookentry[f]{Why We Sleep: Unlocking the Power of Sleep and Dreams}{Matthew Walker}{2017}
+
+\end{itemize}
