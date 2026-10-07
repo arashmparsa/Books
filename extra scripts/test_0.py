@@ -1,3 +1,4 @@
+import os
 """
 Complete YouTube Book Extraction Script
 Analyzes YouTube channels and extracts book recommendations from video descriptions
@@ -318,7 +319,7 @@ if __name__ == "__main__":
     print("=" * 60)
     
     # REPLACE THIS WITH YOUR ACTUAL API KEY
-    API_KEY = "AIzaSyAUywIjr2B4gDBvWKZnx8aMA-luPPuxRZk"
+    API_KEY = os.environ.get("YOUTUBE_API_KEY", "YOUR_YOUTUBE_API_KEY")
     
     # Choose your analysis mode:
     

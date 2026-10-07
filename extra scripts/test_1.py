@@ -1,3 +1,4 @@
+import os
 """
 Huberman Lab Specific Book Extractor
 Targets the exact format: "Book Title": Amazon_link
@@ -259,7 +260,7 @@ class HubermanBookExtractor:
 
 # RUN EXTRACTION
 if __name__ == "__main__":
-    API_KEY = "AIzaSyAUywIjr2B4gDBvWKZnx8aMA-luPPuxRZk"
+    API_KEY = os.environ.get("YOUTUBE_API_KEY", "YOUR_YOUTUBE_API_KEY")
     
     print("\n" + "="*80)
     print("HUBERMAN LAB BOOK EXTRACTOR")
